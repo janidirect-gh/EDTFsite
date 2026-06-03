@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>EDTF - Energia dla Twojej Firmy | Optymalizacja Kosztów Energii i Gazu</title>
+  <meta name="description" content="Kompleksowy audyt i optymalizacja kosztów zakupu energii elektrycznej oraz gazu dla firm. Zabezpiecz stabilne warunki i przestań nieświadomie przepłacać za rachunki energetyczne.">
+  <meta name="keywords" content="EDTF, audyt energetyczny, energia dla firm, optymalizacja gazu, koszty energii, umowy energetyczne, ceny energii, oszczędność prądu dla firm">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://janik.github.io/Nowa-strona-EDTF/">
+  <meta property="og:title" content="EDTF - Energia dla Twojej Firmy">
+  <meta property="og:description" content="Kompleksowy audyt i optymalizacja kosztów zakupu energii elektrycznej oraz gazu dla firm. Zabezpiecz stabilne warunki i zwiększ zyski przedsiębiorstwa.">
+  <meta property="og:image" content="assets/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Core JS -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- Dynamic Particle Canvas Background -->
+  <div id="canvas-container">
+    <canvas id="bg-canvas"></canvas>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="#hero" class="logo" id="nav-logo">
+        <div class="logo-svg-container">
+          <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="hsl(190, 100%, 50%)" />
+                <stop offset="100%" stop-color="hsl(25, 100%, 50%)" />
+              </linearGradient>
+              <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path d="M50 15 C69.33 15, 85 30.67, 85 50 C85 69.33, 69.33 85, 50 85 C30.67 85, 15 69.33, 15 50" stroke="url(#logoGrad)" stroke-width="4" stroke-linecap="round" filter="url(#logoGlow)" />
+            <circle cx="50" cy="50" r="7" fill="hsl(190, 100%, 50%)" filter="url(#logoGlow)" />
+            <line x1="50" y1="15" x2="50" y2="38" stroke="hsl(190, 100%, 50%)" stroke-width="1.5" stroke-dasharray="2,2" />
+            <line x1="15" y1="50" x2="38" y2="50" stroke="hsl(190, 100%, 50%)" stroke-width="1.5" stroke-dasharray="2,2" />
+            <line x1="50" y1="62" x2="50" y2="85" stroke="hsl(25, 100%, 50%)" stroke-width="1.5" stroke-dasharray="2,2" />
+            <path d="M54 36 L40 52 L49 52 L46 64 L60 48 L51 48 Z" fill="url(#logoGrad)" filter="url(#logoGlow)" />
+          </svg>
+        </div>
+        <div class="logo-text-wrapper">
+          <div class="logo-text">EDTF<span>.</span></div>
+          <div class="logo-subtext">Energia dla Firm</div>
+        </div>
+      </a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="#impact">Korzyści</a></li>
+          <li class="nav-item"><a href="#calculator">Kalkulator strat</a></li>
+          <li class="nav-item"><a href="#process">Jak działamy</a></li>
+          <li class="nav-item"><a href="#cta">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <button class="burger" aria-label="Menu" id="burger-menu">
+        <span class="line1"></span>
+        <span class="line2"></span>
+        <span class="line3"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg width="12" height="12" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 0.3rem;">
+            <circle cx="5" cy="5" r="4" fill="hsl(190, 100%, 50%)" />
+          </svg>
+          Rynek Uwolniony — Zweryfikuj warunki
+        </div>
+        <h1 class="hero-title">
+          <span class="main-text">Zabezpiecz rentowność</span>
+          <span class="main-text text-gradient">firmy przed stratami.</span>
+        </h1>
+        <p class="hero-desc">
+          Wykryj i wyeliminuj nieświadome przepłacanie za rachunki energetyczne! Różnice w warunkach zakupowych między przedsiębiorstwami sięgają nawet <strong>kilkuset procent</strong>. Skuteczna redukcja kosztów operacyjnych to najszybsza droga do poprawy wyniku finansowego.
+        </p>
+        <div class="hero-actions">
+          <a href="#calculator" class="btn btn-cyan" id="hero-btn-calc">Oblicz potencjalne straty</a>
+          <a href="#cta" class="btn btn-orange" id="hero-btn-cta">Bezpłatna analiza wstępna</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="glass-card ticker-card">
+          <div class="ticker-header">
+            <span>Nieświadome straty polskich firm dzisiaj</span>
+            <div class="ticker-status-dot"></div>
+          </div>
+          <div class="ticker-amount" id="ticker-amount-box">
+            <span id="ticker-val">2 384 192</span>
+            <span class="ticker-currency">PLN</span>
+          </div>
+          <div class="ticker-footer">
+            Dane szacunkowe z rynku energii elektrycznej i gazu
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Impact / "Sok Biznesowy" Section -->
+  <section id="impact" class="reveal">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 5rem;">
+        <h2>Dlaczego optymalizacja kosztów energii to klucz?</h2>
+        <p style="max-width: 700px; margin: 1.5rem auto 0; font-size: 1.1rem;">
+          Energia to stały koszt operacyjny, który ponosi każda firma. Zamiast skupiać się wyłącznie na zwiększaniu sprzedaży, zabezpiecz marżę u źródła.
+        </p>
+      </div>
+
+      <div class="impact-grid">
+        <div class="contrast-container">
+          <h3 style="font-family: var(--font-body); font-weight: 600; text-transform: none; letter-spacing: 0; margin-bottom: 0.5rem;">Zderzenie Rzeczywistości Rynkowej</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 2rem;">Wiele firm nieświadomie przepłaca dziesiątki lub setki tysięcy złotych w skali kontraktu przez brak wiedzy o strategicznych zakupach.</p>
+          
+          <div class="contrast-row">
+            <div class="contrast-box negative">
+              <h4>Firma bez wsparcia EDTF</h4>
+              <ul>
+                <li>Niewiedza o marżach i opłatach dodatkowych</li>
+                <li>Podpisywanie niekorzystnych umów na lata</li>
+                <li>Podatność na wahania na dynamicznym rynku</li>
+                <li>Ryzykowne i zawiłe zapisy umowne</li>
+              </ul>
+            </div>
+            <div class="contrast-box positive">
+              <h4>Współpraca z EDTF</h4>
+              <ul>
+                <li>Pełna kontrola nad strukturą opłat</li>
+                <li>Strategicznie wynegocjowane warunki</li>
+                <li>Ceny zabezpieczone na kolejne lata</li>
+                <li>Umowy przejrzyste i pozbawione ryzyka</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="impact-cards">
+          <div class="impact-card">
+            <div class="impact-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg>
+            </div>
+            <div class="impact-info">
+              <h3>Realne i mierzalne oszczędności</h3>
+              <p>Szczegółowo analizujemy obecne umowy, profil zużycia oraz wszelkie dodatkowe opłaty. Wskazujemy konkretne obszary nadpłat, aby przełożyły się one na zauważalny wzrost zysku netto firmy.</p>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div class="impact-info">
+              <h3>Gwarancja lepszych warunków</h3>
+              <p>Z Nami nie podpiszesz gorszego kontraktu niż Twój obecny. Wykorzystujemy znajomość strategii dostawców i mechanizmów giełdowych, negocjując wyłącznie zyskowne warunki dla Twojej firmy.</p>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <div class="impact-info">
+              <h3>Bezpieczeństwo i stabilność</h3>
+              <p>Rynek energii i gazu jest nieprzewidywalny. Pomagamy chronić firmę przed nagłymi wahaniami cen, eliminujemy ukryte koszty i budujemy stabilną, bezpieczną strategię energetyczną na lata.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Cost Estimator -->
+  <section id="calculator" class="reveal">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 5rem;">
+        <h2>Kalkulator Strat Energetycznych</h2>
+        <p style="max-width: 700px; margin: 1.5rem auto 0; font-size: 1.1rem;">
+          Wprowadź swoje obecne koszty oraz zużycie mediów, aby oszacować kwotę, jaką prawdopodobnie co miesiąc traci Twoje przedsiębiorstwo.
+        </p>
+      </div>
+
+      <div class="calculator-grid">
+        <div class="calc-widget">
+          <!-- Switch Tabs -->
+          <div class="calc-tabs">
+            <button class="calc-tab active" data-type="electricity" id="tab-electricity">
+              ⚡ Energia Elektryczna
+            </button>
+            <button class="calc-tab" data-type="gas" id="tab-gas">
+              🔥 Gaz Ziemny
+            </button>
+          </div>
+
+          <div class="calc-inputs">
+            <!-- Cost Slider -->
+            <div class="calc-group">
+              <div class="calc-label-row">
+                <span>Miesięczny koszt energii</span>
+                <span class="calc-value-display" id="calc-cost-display">45 000 zł</span>
+              </div>
+              <input type="range" class="calc-slider" id="calc-cost-slider" min="1000" max="150000" step="1000" value="45000" data-type="electricity">
+            </div>
+
+            <!-- MWh Slider -->
+            <div class="calc-group">
+              <div class="calc-label-row">
+                <span id="calc-mwh-label">Zużycie Energii (MWh)</span>
+                <span class="calc-value-display" id="calc-mwh-display">90 MWh</span>
+              </div>
+              <input type="range" class="calc-slider" id="calc-mwh-slider" min="1" max="250" step="1" value="90" data-type="electricity">
+              
+              <!-- Unit Selector Switch (Monthly / Yearly) -->
+              <div class="toggle-container">
+                <span class="toggle-label">Okres zużycia:</span>
+                <label class="toggle-switch" data-theme="electricity">
+                  <input type="checkbox" id="calc-unit-toggle">
+                  <span class="slider-round"></span>
+                </label>
+                <span class="toggle-label" id="toggle-unit-text" style="font-weight: 600;">Miesięcznie</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <span class="results-badge">Raport Finansowy (Estymacja)</span>
+          
+          <div class="loss-value-box">
+            <h3 class="loss-value-title"><span id="calc-type-title">Energia Elektryczna</span> - Twoje potencjalne straty</h3>
+            <div class="loss-value">
+              <span id="loss-monthly-value">0</span>
+              <span>PLN <span style="font-size: 1.1rem; color: var(--text-dim); text-shadow: none;">/ mies.</span></span>
+            </div>
+            <div class="loss-value-yearly" style="margin-bottom: 0.5rem;">
+              Roczna skumulowana strata: <strong id="loss-yearly-value">0</strong> PLN
+            </div>
+            <div class="loss-value-yearly">
+              W skali 3-letniego kontraktu: <strong id="loss-contract-value">0</strong> PLN
+            </div>
+          </div>
+
+          <div class="results-info-box">
+            <p>
+              * Wyliczenia mają charakter szacunkowy. Dokładna kwota oszczędności zależy od profilu godzinowego firmy, aktualnej taryfy dystrybucyjnej oraz zapisów w obecnie trwającym kontrakcie. Wyślij rachunki do bezpłatnego audytu, aby poznać realny wynik.
+            </p>
+          </div>
+
+          <div>
+            <a href="#cta" class="btn btn-orange" id="calc-btn-cta">Zatrzymaj te straty</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cooperation Process -->
+  <section id="process" class="reveal">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 5rem;">
+        <h2>Jak wygląda współpraca z EDTF?</h2>
+        <p style="max-width: 700px; margin: 1.5rem auto 0; font-size: 1.1rem;">
+          Minimalizujemy zaangażowanie po stronie Twojego zespołu. Cały proces optymalizacji prowadzimy samodzielnie, raportując każdy zysk.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-grid">
+          
+          <div class="timeline-step">
+            <div class="timeline-node">01</div>
+            <h3>Wstępna analiza</h3>
+            <p>Przesyłasz nam swoje ostatnie faktury za energię lub gaz. W ciągu 48h sprawdzamy poziom przepłacania.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-node">02</div>
+            <h3>Kompleksowy Audyt</h3>
+            <p>Szczegółowo analizujemy aktualne kontrakty, profil zużycia, taryfy i koszty dystrybucji mediów.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-node">03</div>
+            <h3>Raport zysków</h3>
+            <p>Przedstawiamy czarno na białym konkretne obszary, w których zoptymalizujemy zakupy energii i gazu.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-node">04</div>
+            <h3>Wdrożenie strategii</h3>
+            <p>Negocjujemy z dostawcami, zmieniamy warunki, pomagamy bezpiecznie wyjść z niekorzystnych umów.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-node">05</div>
+            <h3>Opieka i Monitoring</h3>
+            <p>Zapewniamy pełne wsparcie ekspertów, śledzimy trendy rynkowe i dbamy o Twoje stabilne ceny na lata.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact Section -->
+  <section id="cta" class="reveal">
+    <div class="container">
+      <div class="cta-box glass-card">
+        <span class="cta-badge">Analiza jest w 100% bezpłatna</span>
+        <h2>Sprawdź, ile zyska Twoja firma</h2>
+        <p>
+          To niezobowiązujący pierwszy krok, który bardzo często przekłada się na znaczące oszczędności i wyższą rentowność przedsiębiorstwa.
+        </p>
+        <div class="cta-actions">
+          <a href="#" class="btn btn-orange" id="btn-cta-form" target="_blank" rel="noopener">Rozpocznij Bezpłatną Analizę</a>
+        </div>
+
+        <div class="cta-contact-info">
+          <div class="contact-item">
+            <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <a href="mailto:kontakt@edtf.pl">kontakt@edtf.pl</a>
+          </div>
+          <div class="contact-item">
+            <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <a href="tel:+48123456789">+48 123 456 789</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="#hero" class="logo" style="margin-bottom: 1.5rem; display: inline-flex;">
+            <div class="logo-svg-container" style="width: 32px; height: 32px;">
+              <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 15 C69.33 15, 85 30.67, 85 50 C85 69.33, 69.33 85, 50 85 C30.67 85, 15 69.33, 15 50" stroke="url(#logoGrad)" stroke-width="5" stroke-linecap="round" />
+                <circle cx="50" cy="50" r="7" fill="hsl(190, 100%, 50%)" />
+                <path d="M54 36 L40 52 L49 52 L46 64 L60 48 L51 48 Z" fill="url(#logoGrad)" />
+              </svg>
+            </div>
+            <div class="logo-text" style="font-size: 1.3rem;">EDTF<span>.</span></div>
+          </a>
+          <p>
+            Pomagamy przedsiębiorstwom w bezpiecznej, długoterminowej optymalizacji zakupów mediów energetycznych. Zabezpieczamy koszty i eliminujemy nieświadome przepłacanie.
+          </p>
+        </div>
+        
+        <ul class="footer-links">
+          <li><a href="#impact">Korzyści</a></li>
+          <li><a href="#calculator">Kalkulator</a></li>
+          <li><a href="#process">Proces</a></li>
+          <li><a href="#cta">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 EDTF. Wszystkie prawa zastrzeżone.
+        </div>
+        <div class="footer-legal">
+          EDTF jest marką operacyjną należącą do Majrud Energy Sp. z o.o. z siedzibą w Piasecznie, ul. Kineskopowa 1/114. KRS: 0001025726, NIP: 1231530230.
+          <a href="#">Polityka Prywatności</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
